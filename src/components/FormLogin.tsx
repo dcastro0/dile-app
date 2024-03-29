@@ -5,7 +5,7 @@ import { useFonts, Aldrich_400Regular } from "@expo-google-fonts/aldrich";
 const FormLogin = () => {
 
     const [fontsLoaded]= useFonts({
-        Aldrich_400Regular
+      Aldrich_400Regular
     })
     
   return (

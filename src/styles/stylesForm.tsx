@@ -32,12 +32,14 @@ const stylesForm = StyleSheet.create({
     },
 
     textWhite: {
-        color: "#fff"
+        color: "#fff",
+        fontFamily: 'Aldrich_400Regular',
+        fontSize: 16,
     },
 
     title:{ 
         fontFamily: 'Aldrich_400Regular',
-        fontSize: 22,
+        fontSize: 20,
         marginBottom: 80,
     },
 
