@@ -1,38 +1,62 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { stylesForm } from "../styles/stylesForm";
-import { useFonts, Aldrich_400Regular } from "@expo-google-fonts/aldrich";
+import {
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  Text,
+  View,
+} from "react-native";
+import { stylesLogin } from "../styles/stylesLogin";
+import { useState } from "react";
+import { useAuth } from "../contexts/Auth";
+import { MyButton } from "./MyButton";
+import { MyInput } from "./MyInput";
 
 const FormLogin = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const { signIn } = useAuth();
 
-    const [fontsLoaded]= useFonts({
-      Aldrich_400Regular
-    })
-    
   return (
-    <View style={stylesForm.container}>
-      <View>
-        <Image source={require("../assets/caminhao.png")} style={stylesForm.img} />
-      </View>
-      <View >
-        <Image source={require("../assets/dile.png")} />
-      </View>
-      <View>
-        <Text style={stylesForm.title}>AutoMecânica Diesel</Text>
-      </View>
-      <View style={stylesForm.form}>
-        <View>
-          <TextInput placeholder="Usuário" style={stylesForm.input}  />
+    <KeyboardAvoidingView
+      behavior={Platform.OS == "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={40}
+    >
+      <ScrollView>
+        <View style={stylesLogin.container}>
+          <View>
+            <Image
+              source={require("../assets/caminhao.png")}
+              style={stylesLogin.img}
+            />
+          </View>
+          <View>
+            <Image source={require("../assets/dile.png")} />
+          </View>
+          <View>
+            <Text style={stylesLogin.title}>AutoMecânica Diesel</Text>
+          </View>
+          <View style={stylesLogin.form}>
+            <View>
+              <MyInput placeholder="Usuário" onChangeText={setUsername} />
+            </View>
+            <View>
+              <MyInput
+                placeholder="Senha"
+                onChangeText={setPassword}
+                secureTextEntry
+              />
+            </View>
+            <View>
+              <MyButton
+                title="Entrar"
+                onPress={() => signIn(username, password)}
+              />
+            </View>
+          </View>
         </View>
-        <View>
-          <TextInput placeholder="Senha" style={stylesForm.input} />
-        </View>
-        <View>
-          <TouchableOpacity style={stylesForm.button}>
-            <Text style={stylesForm.textWhite}>Entrar</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </View>
+      </ScrollView>
+    </KeyboardAvoidingView>
   );
 };
 

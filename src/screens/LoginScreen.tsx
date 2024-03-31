@@ -1,11 +1,13 @@
-import { View } from "react-native";
 import { FormLogin } from "../components/FormLogin";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { stylesLogin } from "../styles/stylesLogin";
+
 
 const LoginScreen = () => {
   return (
-    <View>
+    <SafeAreaView style={stylesLogin.container}>
       <FormLogin />
-    </View>
+    </SafeAreaView>
   );
 };
 
