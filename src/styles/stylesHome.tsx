@@ -15,7 +15,7 @@ const stylesHome = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "#fff",
-    padding: 20,
+    padding: 16,
   },
 
   line: {
@@ -40,7 +40,6 @@ const stylesHome = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "space-around",
   },
 
   textWhite36: {
@@ -49,12 +48,87 @@ const stylesHome = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  cardItem2:{
-    flex:0,
-    alignItems: 'center',
-    padding: 10,
-  }
+  cards: {
+    flex: 0,
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
 
+  cardCanceled: {
+    backgroundColor: "#455B82",
+    width: 170,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    borderWidth: 1,
+  },
+
+  cardInProgress: {
+    backgroundColor: "#455B82",
+    width: 170,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    gap: 10,
+    borderWidth: 1,
+  },
+
+  cardCompleted: {
+    backgroundColor: "#455B82",
+    width: 310,
+    borderRadius: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    borderWidth: 1,
+  },
+
+  cardItem2: {
+    alignItems: "center",
+    paddingHorizontal: 40,
+    paddingVertical: 20,
+  },
+
+  myCard: {
+    flex: 0,
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "column",
+    backgroundColor: "#d9d9d9",
+    width: 90,
+    height: 90,
+    borderRadius: 20,
+  },
+
+  textBlue24: {
+    color: "#122F61",
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+
+  textBlue16: {
+    color: "#122F61",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+
+  cardsColumn: {
+    flex: 0,
+    flexDirection: "column",
+    gap: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+
+  row: {
+    flex: 0,
+    flexDirection: 'row',
+    gap: 10,
+    alignItems: 'center'
+  }
 });
 
 export { stylesHome };
