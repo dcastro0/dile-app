@@ -1,10 +1,9 @@
-import { StyleSheet, TextInput, TextInputProps } from "react-native";
+import { TextInput } from "react-native";
 import { stylesLogin } from "../styles/stylesLogin";
 import { useEffect, useRef } from "react";
+import { InputProps } from "../interfaces/InputProps";
 
-interface InputProps extends TextInputProps {
-  autoFocusLabel?: string;
-}
+
 
 const MyInput = ({ autoFocusLabel, ...rest }: InputProps) => {
   const inputRef = useRef<TextInput>(null);

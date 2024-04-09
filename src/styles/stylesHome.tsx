@@ -15,7 +15,7 @@ const stylesHome = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "#fff",
-    padding: 16,
+    height: 80,
   },
 
   line: {
@@ -125,10 +125,17 @@ const stylesHome = StyleSheet.create({
 
   row: {
     flex: 0,
-    flexDirection: 'row',
+    flexDirection: "row",
     gap: 10,
-    alignItems: 'center'
-  }
+    alignItems: "center",
+  },
+
+  containerIcon: {
+    borderTopWidth: 3,
+    height: "100%",
+    borderColor: "#122F61",
+    justifyContent: "center",
+  },
 });
 
 export { stylesHome };

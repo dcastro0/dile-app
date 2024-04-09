@@ -1,10 +1,10 @@
 import { Image, SafeAreaView, Text, View } from "react-native";
 import { stylesLogin } from "../styles/stylesLogin";
 import { useState } from "react";
-import { useAuth } from "../contexts/Auth";
 import { MyButton } from "../components/MyButton";
 import { MyInput } from "../components/MyInput";
 import { AntDesign } from "@expo/vector-icons";
+import { useAuth } from "../hooks/useAuth";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");

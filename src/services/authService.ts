@@ -1,19 +1,17 @@
-import {AuthData}  from "../contexts/Auth";
+import { AuthData } from "../interfaces/AuthData";
 
 function signIn(username: string, password: string): Promise<AuthData> {
   return new Promise((resolve, reject) => {
-    setTimeout(()=>{
-      if(password === '123456'){
-        resolve({
-          token: 'fake-token',
-          username,
-          name: 'Caio'
-        })
-      } else {
-        reject(new Error('Credenciais inválidas'))
-      }
-    }, 500)
+    if (password === "123456") {
+      resolve({
+        token: "fake-token",
+        username,
+        name: "Caio",
+      });
+    } else {
+      reject(new Error("Credenciais inválidas"));
+    }
   });
 }
 
-export const authService = {signIn}
+export const authService = { signIn };

@@ -1,29 +1,15 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 import { createContext, useState } from "react";
 import { authService } from "../services/authService";
 import { Alert } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-
-interface AuthData {
-  token: string;
-  username: string;
-  name: string;
-}
-
-interface AuthContextData {
-  authData?: AuthData;
-  signIn: (username: string, password: string) => Promise<void>;
-  signOut: () => Promise<void>;
-  loading: boolean;
-}
-
-interface AuthProviderProps {
-  children: React.ReactNode;
-}
+import { AuthContextData } from "../interfaces/AuthContextData";
+import { AuthProviderProps } from "../interfaces/AuthProviderProps";
+import { AuthData } from "../interfaces/AuthData";
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
+const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const [authData, setAuthData] = useState<AuthData>();
   const [loading, setLoading] = useState(true);
 
@@ -58,17 +44,10 @@ const AuthProvider: React.FC<AuthProviderProps> = ({children}) => {
   }
 
   return (
-    <AuthContext.Provider
-      value={{ authData, loading, signIn, signOut }}
-    >
+    <AuthContext.Provider value={{ authData, loading, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-function useAuth() {
-  const context = useContext(AuthContext);
-  return context;
-}
-
-export { AuthContext, AuthData, AuthProvider, useAuth };
+export { AuthContext, AuthProvider };

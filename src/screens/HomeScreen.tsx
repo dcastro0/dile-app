@@ -1,17 +1,16 @@
-import { Text, TouchableOpacity, View } from "react-native";
+import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { useAuth } from "../contexts/Auth";
 import { NavBar } from "../components/NavBar";
 import { stylesHome } from "../styles/stylesHome";
 import { CardCanceled } from "../components/CardsCanceled";
-import { MyButton } from "../components/MyButton";
 import { CardCompletedServices } from "../components/CardCompletedServices";
 import { CardInProgress } from "../components/CardInProgress";
 import { MyCard } from "../components/MyCard";
 import { AntDesign } from "@expo/vector-icons";
+import React from "react";
+import { ScreenProps } from "../types/ScreenProps";
 
-const HomeScreen = () => {
-  const { signOut } = useAuth();
+const HomeScreen: React.FC<ScreenProps> = ({ navigation }) => {
   return (
     <SafeAreaView style={stylesHome.container}>
       <View style={stylesHome.line}></View>
@@ -21,7 +20,7 @@ const HomeScreen = () => {
         <CardCanceled />
       </View>
       <View style={stylesHome.line}></View>
-      <MyButton title="Sair" onPress={signOut} />
+
       <View style={stylesHome.cardsColumn}>
         <Text style={stylesHome.textBlue24}>SERVIÇOS TOTAIS</Text>
         <View style={stylesHome.row}>
@@ -35,7 +34,7 @@ const HomeScreen = () => {
           <MyCard title="MÉDIA" amount={10} />
         </View>
       </View>
-      <NavBar />
+      <NavBar navigation={navigation} screen="Home" />
     </SafeAreaView>
   );
 };

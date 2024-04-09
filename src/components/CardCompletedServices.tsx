@@ -1,5 +1,5 @@
 import { FontAwesome5 } from "@expo/vector-icons";
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { stylesHome } from "../styles/stylesHome";
 import { useEffect, useState } from "react";
 
