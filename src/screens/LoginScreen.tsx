@@ -1,69 +1,90 @@
-import {
-  Image,
-  KeyboardAvoidingView,
-  Platform,
-  SafeAreaView,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
+import { Image, SafeAreaView, Text, View } from "react-native";
 import { stylesLogin } from "../styles/stylesLogin";
 import { useState } from "react";
 import { useAuth } from "../contexts/Auth";
 import { MyButton } from "../components/MyButton";
 import { MyInput } from "../components/MyInput";
+import { AntDesign } from "@expo/vector-icons";
 
 const LoginScreen = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const { signIn } = useAuth();
+  const [inputSelecionado, setInputSelecionado] = useState(false);
+  const [label, setLabel] = useState("");
+  const handleFocus = (label: string) => {
+    setLabel(label);
+    setInputSelecionado(true);
+  };
+
+  const handleBlur = () => {
+    setInputSelecionado(false);
+  };
 
   return (
     <SafeAreaView style={stylesLogin.container}>
-      <KeyboardAvoidingView
-        behavior={Platform.OS == "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={40}
-      >
-        <ScrollView>
-          <View style={stylesLogin.container}>
+      {inputSelecionado ? (
+        <View style={stylesLogin.containerInput}>
+          <View style={stylesLogin.containerRow}>
+            <AntDesign
+              name="left"
+              color="#fff"
+              size={36}
+              onPress={handleBlur}
+            />
+            <Text style={stylesLogin.titleWhite}>{label}</Text>
+          </View>
+          <MyInput
+            autoFocusLabel={label}
+            onChangeText={label === "USERNAME" ? setUsername : setPassword}
+            value={label === "USERNAME" ? username : password}
+            onBlur={handleBlur}
+            style={stylesLogin.inputSelected}
+            secureTextEntry={label === "SENHA"}
+            autoFocus
+          />
+        </View>
+      ) : (
+        <View style={stylesLogin.container}>
+          <View>
+            <Image
+              source={require("../assets/caminhao.png")}
+              style={stylesLogin.img}
+            />
+          </View>
+          <View>
+            <Image source={require("../assets/dile.png")} />
+          </View>
+          <View>
+            <Text style={stylesLogin.title}>AutoMecânica Diesel</Text>
+          </View>
+          <View style={stylesLogin.form}>
             <View>
-              <Image
-                source={require("../assets/caminhao.png")}
-                style={stylesLogin.img}
+              <MyInput
+                value={username}
+                placeholder="Usuário"
+                onFocus={() => handleFocus("USERNAME")}
+                onBlur={handleBlur}
               />
             </View>
             <View>
-              <Image source={require("../assets/dile.png")} />
+              <MyInput
+                placeholder="Senha"
+                value={password}
+                secureTextEntry
+                onFocus={() => handleFocus("SENHA")}
+                onBlur={handleBlur}
+              />
             </View>
             <View>
-              <Text style={stylesLogin.title}>AutoMecânica Diesel</Text>
-            </View>
-            <View style={stylesLogin.form}>
-              <View>
-                <MyInput
-                  placeholder="Usuário"
-                  onChangeText={setUsername}
-                  value={username}
-                />
-              </View>
-              <View>
-                <MyInput
-                  placeholder="Senha"
-                  onChangeText={setPassword}
-                  value={password}
-                  secureTextEntry
-                />
-              </View>
-              <View>
-                <MyButton
-                  title="Entrar"
-                  onPress={() => signIn(username, password)}
-                />
-              </View>
+              <MyButton
+                title="Entrar"
+                onPress={() => signIn(username, password)}
+              />
             </View>
           </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        </View>
+      )}
     </SafeAreaView>
   );
 };

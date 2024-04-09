@@ -1,20 +1,21 @@
 import { StyleSheet, TextInput, TextInputProps } from "react-native";
+import { stylesLogin } from "../styles/stylesLogin";
+import { useEffect, useRef } from "react";
 
-interface InputProps extends TextInputProps {}
+interface InputProps extends TextInputProps {
+  autoFocusLabel?: string;
+}
 
-const MyInput = ({ ...rest }: InputProps) => {
-  return <TextInput style={styles.input} {...rest} />;
+const MyInput = ({ autoFocusLabel, ...rest }: InputProps) => {
+  const inputRef = useRef<TextInput>(null);
+  useEffect(() => {
+    if (autoFocusLabel) {
+      inputRef.current?.focus();
+    }
+  }, [autoFocusLabel]);
+  return <TextInput ref={inputRef} style={stylesLogin.input}  {...rest} />;
 };
 
-const styles = StyleSheet.create({
-  input: {
-    width: 250,
-    height: 40,
-    borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
-    backgroundColor: "#fff",
-  },
-});
+
 
 export { MyInput };
