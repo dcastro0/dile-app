@@ -4,4 +4,4 @@ interface InputProps extends TextInputProps {
   autoFocusLabel?: string;
 }
 
-export {InputProps}
+export { InputProps };

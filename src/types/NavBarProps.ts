@@ -3,7 +3,7 @@ import { RootStackParamList } from "./RootStackParamList";
 
 type NavBarProps = {
   navigation: NativeStackNavigationProp<RootStackParamList>;
-  screen: string
+  screen: string;
 };
 
-export {NavBarProps}
+export { NavBarProps };

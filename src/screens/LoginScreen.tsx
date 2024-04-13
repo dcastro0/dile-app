@@ -3,7 +3,7 @@ import { stylesLogin } from "../styles/stylesLogin";
 import { useState } from "react";
 import { MyButton } from "../components/MyButton";
 import { MyInput } from "../components/MyInput";
-import { AntDesign } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { useAuth } from "../hooks/useAuth";
 
 const LoginScreen = () => {
@@ -26,10 +26,10 @@ const LoginScreen = () => {
       {inputSelecionado ? (
         <View style={stylesLogin.containerInput}>
           <View style={stylesLogin.containerRow}>
-            <AntDesign
-              name="left"
+            <Feather
+              name="chevron-left"
               color="#fff"
-              size={36}
+              size={40}
               onPress={handleBlur}
             />
             <Text style={stylesLogin.titleWhite}>{label}</Text>

@@ -4,4 +4,4 @@ interface ButtonProps extends TouchableOpacityProps {
   title: string;
 }
 
-export {ButtonProps}
+export { ButtonProps };

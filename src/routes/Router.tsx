@@ -1,5 +1,5 @@
 import { NavigationContainer } from "@react-navigation/native";
-import { AppStack } from "./AppStack";
+import { AppTabRoutes } from "./AppTab.Routes";
 import { AuthStack } from "./AuthStack";
 import { Text, View } from "react-native";
 import { useAuth } from "../hooks/useAuth";
@@ -17,7 +17,7 @@ const Router = () => {
 
   return (
     <NavigationContainer>
-      {authData ? <AppStack /> : <AuthStack />}
+      {authData ? <AppTabRoutes /> : <AuthStack />}
     </NavigationContainer>
   );
 };

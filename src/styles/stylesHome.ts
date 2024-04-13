@@ -40,6 +40,7 @@ const stylesHome = StyleSheet.create({
     flex: 0,
     flexDirection: "row",
     alignItems: "center",
+    gap: 10,
   },
 
   textWhite36: {

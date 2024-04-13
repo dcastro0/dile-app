@@ -4,4 +4,4 @@ interface AuthData {
   name: string;
 }
 
-export {AuthData}
+export { AuthData };

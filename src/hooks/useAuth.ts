@@ -6,4 +6,4 @@ function useAuth() {
   return context;
 }
 
-export {useAuth}
+export { useAuth };

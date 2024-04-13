@@ -7,4 +7,4 @@ interface AuthContextData {
   loading: boolean;
 }
 
-export {AuthContextData}
+export { AuthContextData };

@@ -1,4 +1,4 @@
-import { FontAwesome5 } from "@expo/vector-icons";
+import { Feather } from "@expo/vector-icons";
 import { Text, View } from "react-native";
 import { stylesHome } from "../styles/stylesHome";
 import { useEffect, useState } from "react";
@@ -15,10 +15,11 @@ const CardCompletedServices = () => {
     setCompletedToday(Math.floor(Math.random() * (0 - 1 + 1)) + 1);
     setCompletedWeek(Math.floor(Math.random() * (20 - 10 + 1)) + 10);
   }, []);
+  
   return (
     <View style={stylesHome.cardCompleted}>
       <View style={stylesHome.cardItem}>
-        <FontAwesome5 name="check" size={40} color="#1aff31" />
+        <Feather name="check" size={40} color="#1aff31" />
         <Text style={stylesHome.textWhite22}>SERVIÇOS CONCLUÍDOS</Text>
       </View>
       <View style={stylesHome.cardItem}>

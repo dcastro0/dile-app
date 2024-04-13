@@ -1,6 +1,6 @@
 interface MyCardProps {
-  amount: number,
-  title: string
+  amount: number;
+  title: string;
 }
 
-export {MyCardProps}
+export { MyCardProps };

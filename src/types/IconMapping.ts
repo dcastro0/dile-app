@@ -5,4 +5,4 @@ type IconMapping = {
   };
 };
 
-export{IconMapping}
+export { IconMapping };

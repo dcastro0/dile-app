@@ -7,4 +7,4 @@ type ScreenProps = {
   navigation: ScreenNavigationProp;
 };
 
-export {ScreenProps}
+export { ScreenProps };
