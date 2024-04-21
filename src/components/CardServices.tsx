@@ -1,13 +1,8 @@
 import { Feather } from "@expo/vector-icons";
 import { Text, View } from "react-native";
 import { stylesServices } from "../styles/stylesServices";
+import { CardServicesProps } from "../interfaces/CardServicesProps";
 
-interface CardServicesProps {
-  title: string;
-  data: string;
-  itensResolvidos: string[];
-  valor: number;
-}
 
 const CardServices = ({
   title,

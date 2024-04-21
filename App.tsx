@@ -3,6 +3,7 @@ import { AuthProvider } from "./src/contexts/Auth";
 import { Router } from "./src/routes/Router";
 import React, { useCallback } from "react";
 import * as SplashScreen from "expo-splash-screen";
+import { StatusBar } from "expo-status-bar";
 
 const App = () => {
   const [fontsLoaded, fontError] = useFonts({
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <AuthProvider>
       <Router />
+      <StatusBar style="light" />
     </AuthProvider>
   );
 };
