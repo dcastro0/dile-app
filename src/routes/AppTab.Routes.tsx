@@ -80,6 +80,10 @@ const AppTabRoutes = () => {
           tabBarIcon: ({ color }) => (
             <Feather name="user" size={40} color={color} />
           ),
+          headerStyle: {
+            backgroundColor: "#E7EAEF",
+            height: 100,
+          },
         }}
       />
     </Tab.Navigator>

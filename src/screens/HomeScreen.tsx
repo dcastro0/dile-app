@@ -9,9 +9,11 @@ import { Feather } from "@expo/vector-icons";
 import React from "react";
 import { ScreenProps } from "../types/ScreenProps";
 
+
 const HomeScreen: React.FC<ScreenProps> = () => {
   return (
     <SafeAreaView style={stylesHome.container}>
+    
       <View style={stylesHome.line}></View>
       <View style={stylesHome.cards}>
         <CardCompletedServices />

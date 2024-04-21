@@ -1,8 +1,8 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "./RootStackParamList";
+import { RootTabParamList } from "./RootTabParamList";
 
 type NavBarProps = {
-  navigation: NativeStackNavigationProp<RootStackParamList>;
+  navigation: NativeStackNavigationProp<RootTabParamList>;
   screen: string;
 };
 

@@ -23,6 +23,7 @@ const LoginScreen = () => {
 
   return (
     <SafeAreaView style={stylesLogin.container}>
+    
       {inputSelecionado ? (
         <View style={stylesLogin.containerInput}>
           <View style={stylesLogin.containerRow}>

@@ -1,7 +1,7 @@
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "./RootStackParamList";
+import { RootTabParamList } from "./RootTabParamList";
 
-type ScreenNavigationProp = NativeStackNavigationProp<RootStackParamList>;
+type ScreenNavigationProp = NativeStackNavigationProp<RootTabParamList>;
 
 type ScreenProps = {
   navigation: ScreenNavigationProp;

@@ -6,6 +6,8 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 
 const App = () => {
+
+  
   const [fontsLoaded, fontError] = useFonts({
     Aldrich_400Regular,
   });
@@ -23,7 +25,7 @@ const App = () => {
   return (
     <AuthProvider>
       <Router />
-      <StatusBar style="light" />
+      <StatusBar style='dark' />
     </AuthProvider>
   );
 };

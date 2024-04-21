@@ -6,7 +6,7 @@ function signIn(username: string, password: string): Promise<AuthData> {
       resolve({
         token: "fake-token",
         username,
-        name: "Caio",
+        name: username,
       });
     } else {
       reject(new Error("Credenciais inválidas"));
